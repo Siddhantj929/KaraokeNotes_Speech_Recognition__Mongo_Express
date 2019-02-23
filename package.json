@@ -1,5 +1,5 @@
 {
-  "name": "lyrics",
+  "name": "karaoke_notes",
   "version": "1.0.0",
   "description": "A Speech Recognition web application which helps users find lyrics and store notes / lyrics by voice / speech / music.",
   "main": "server.js",
