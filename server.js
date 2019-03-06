@@ -9,33 +9,53 @@ const mongoose = require("mongoose");
 const app = express();
 
 // ===========================================
-// Declaring Hosting Variables
+// Environment Variables
 // ===========================================
 
-const PORT = process.env.PORT || 3000;
-const HOST = process.env.HOST || "localhost";
+const PORT = process.env.PORT;
+const HOST = process.env.HOST;
+
+// ===========================================
+// ROUTES
+// ===========================================
+
+const AuthRoutes = require("./Routes/Auth");
 
 // ===========================================
 // Configuring app instance
 // ===========================================
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.static("static"));
+
+app.set("view engine", "ejs");
 
 // ===========================================
 // Configuring the routes
 // ===========================================
 
-app.use("/", (req, res) => {
-    res.send("Connected!");
-});
+app.get("/", (_, res) => res.render("index"));
+app.use("/user", AuthRoutes);
 
 // ===========================================
 // Running the Server
 // ===========================================
 
-app.listen(PORT, HOST, () => {
-    console.clear();
-    console.log(
-        "Server started @ http://" + HOST + ":" + PORT
-   );
-});
+// Connecting to database
+mongoose.connect(
+   `mongodb+srv://${process.env.MONGO_USER}:${
+      process.env.MONGO_PASSWORD
+   }@cluster0-cqxyc.mongodb.net/${process.env.MONGO_DB}?retryWrites=true`,
+   { useNewUrlParser: true },
+   err => {
+      if (err) console.log(err);
+      else {
+         // Running the server
+         app.listen(PORT, HOST, () => {
+            console.clear();
+            console.log("Server started @ http://" + HOST + ":" + PORT);
+         });
+      }
+   }
+);

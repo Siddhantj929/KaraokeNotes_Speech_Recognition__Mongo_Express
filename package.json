@@ -1,25 +1,29 @@
 {
-  "name": "karaoke_notes",
-  "version": "1.0.0",
-  "description": "A Speech Recognition web application which helps users find lyrics and store notes / lyrics by voice / speech / music.",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Siddhantj929/SingAndFind_Speech_Recognition__Mongo_Express.git"
-  },
-  "author": "Siddhant Jain , Muskaan Jain",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/Siddhantj929/SingAndFind_Speech_Recognition__Mongo_Express/issues"
-  },
-  "homepage": "https://github.com/Siddhantj929/SingAndFind_Speech_Recognition__Mongo_Express#readme",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "mongoose": "^5.4.15"
-  }
+   "name": "karaoke_notes",
+   "version": "1.0.0",
+   "description": "A Speech Recognition web application which helps users find lyrics and store notes / lyrics by voice / speech / music.",
+   "main": "server.js",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "nodemon server.js"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Siddhantj929/SingAndFind_Speech_Recognition__Mongo_Express.git"
+   },
+   "author": "Siddhant Jain , Muskaan Jain",
+   "license": "GPL-3.0-or-later",
+   "bugs": {
+      "url": "https://github.com/Siddhantj929/SingAndFind_Speech_Recognition__Mongo_Express/issues"
+   },
+   "homepage": "https://github.com/Siddhantj929/SingAndFind_Speech_Recognition__Mongo_Express#readme",
+   "dependencies": {
+      "body-parser": "^1.18.3",
+      "ejs": "^2.6.1",
+      "express": "^4.16.4",
+      "mongoose": "^5.4.15"
+   },
+   "devDependencies": {
+      "nodemon": "^1.18.10"
+   }
 }

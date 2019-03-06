@@ -1,0 +1,9 @@
+{
+   "env": {
+      "PORT": 3000,
+      "HOST": "localhost",
+      "MONGO_PASSWORD": "Y0T82LQ47gUnWZdL",
+      "MONGO_USER": "karaokeNotesUser",
+      "MONGO_DB": "KaraokeNotes"
+   }
+}
